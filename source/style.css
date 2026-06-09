@@ -1,6 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
-/* <weight>: Use a value from 400 to 700
+:root {
+  --off-white: #faf9f6;
+  --accent-red: #bf4342;
+  --main-color: #6f455d;
+  --medium-blue: #2b4c7e;
+  --dark-blue: #1e3451;
+  --navy: #111c24;
+  --header-font: "Montserrat", sans-serif;
+  --text-font: "Lora", serif;
+}
+/*
+create classes with specific styling and then apply to sections!! 
+also set specific width and height for each section 
+font-family: var(--text-font);
+<weight>: Use a value from 400 to 700
 <uniquifier>: Use a unique and descriptive class name
 
  .lora-<uniquifier > {
@@ -20,7 +34,3 @@
   font-style: normal;
 }
 */
-
-body {
-  font-family: "Lora", serif;
-}
