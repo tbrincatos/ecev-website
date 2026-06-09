@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* <weight>: Use a value from 400 to 700
+<uniquifier>: Use a unique and descriptive class name
+
+ .lora-<uniquifier > {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+<weight>: Use a value from 100 to 900
+<uniquifier>: Use a unique and descriptive class name
+
+.montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+*/
+
+body {
+  font-family: "Lora", serif;
+}
