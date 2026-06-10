@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+/*variables*/
+
 :root {
   --off-white: #faf9f6;
   --accent-red: #bf4342;
@@ -10,6 +12,82 @@
   --header-font: "Montserrat", sans-serif;
   --text-font: "Lora", serif;
 }
+
+/*text formatting*/
+
+h1,
+.heading-title {
+  color: var(--navy);
+  font-family: var(--header-font);
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+  font-size: 78px;
+}
+
+.heading-title {
+  font-size: 48px;
+}
+
+.standard-text {
+  font-family: var(--text-font);
+  font-size: 48px;
+}
+
+.title {
+  font-family: var(--text-font);
+  font-size: 64px;
+}
+
+.title-emphasised {
+  font-family: var(--header-font);
+  font-size: 78px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/*font weights*/
+
+.bold {
+  font-weight: bold;
+}
+
+.italics {
+  font-style: italic;
+}
+
+.semi-bold {
+  font-weight: 500;
+}
+
+/* main colors */
+
+.main-color {
+  color: var(--main-color);
+}
+
+.off-white {
+  color: var(--off-white);
+}
+
+.medium-blue {
+  color: var(--medium-blue);
+}
+
+.dark-blue {
+  color: var(--dark-blue);
+}
+
+.navy {
+  color: var(--navy);
+}
+
+.accent-red {
+  color: var(--accent-red);
+}
+
 /*
 create classes with specific styling and then apply to sections!! 
 also set specific width and height for each section 
