@@ -16,15 +16,44 @@
 body {
   margin: 0;
 }
-f
-/*text formatting*/
 
+/*section formatting*/
+section {
+  height: 670px;
+}
+.section-1,
+.section-5 {
+  background-color: var(--off-white);
+}
+.section-2,
+.section-7 {
+  background-color: var(--main-color);
+}
+
+/* .section-3.problem-1 {
+background-color: ffffff;
+}
+.section-3.problem-2 {
+background-color: var(--accent-color);
+}*/
+
+.section-4,
+.section-6 {
+  background-color: var(--dark-blue);
+}
+
+/*text formatting*/
+a,
+a:visited {
+  text-decoration: none;
+}
 h1,
 .heading-title {
   color: var(--navy);
   font-family: var(--header-font);
   font-weight: bold;
   text-align: center;
+  text-transform: uppercase;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -39,6 +68,7 @@ h1 {
 .standard-text {
   font-family: var(--text-font);
   font-size: 48px;
+  text-align: center;
 }
 
 .title {
