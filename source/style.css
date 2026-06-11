@@ -48,7 +48,7 @@ background-color: var(--accent-color);
 .section-1 .hero {
   display: flex;
   justify-content: center;
-  padding-top: 15px;
+  padding: 35px 0 20px;
 }
 
 .section-1 .hero .tag-line {
@@ -71,6 +71,12 @@ background-color: var(--accent-color);
   display: flex;
   justify-content: right;
   padding-right: 50px;
+}
+
+.section-2 .description {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
 }
 
 /*items formatting*/
@@ -126,6 +132,11 @@ h1 {
   font-family: var(--header-font);
   font-size: 78px;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.no-margin {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /*font weights*/
