@@ -13,11 +13,14 @@
   --text-font: "Lora", serif;
 }
 
-body {
+/*section formatting*/
+
+body,
+html {
   margin: 0;
+  padding: 0;
 }
 
-/*section formatting*/
 section {
   height: 670px;
 }
@@ -42,6 +45,49 @@ background-color: var(--accent-color);
   background-color: var(--dark-blue);
 }
 
+.section-1 .hero {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+.section-1 .hero .tag-line {
+  margin-top: 16px;
+}
+
+.section-1 .hero h1 {
+  margin-bottom: 0;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: var(--off-white);
+  padding: 0;
+  text-align: center;
+}
+
+.sticky-header-content {
+  display: flex;
+  justify-content: right;
+  padding-right: 50px;
+}
+
+/*items formatting*/
+button {
+  background-color: var(--main-color);
+  border: 0;
+  border-radius: 60px;
+  box-shadow: 5px 5px 5px rgba(111, 69, 93, 0.22);
+  display: block;
+  margin: 0 auto;
+  padding: 30px 60px;
+}
+
+.big-logo {
+  margin-top: 26px;
+}
+
 /*text formatting*/
 a,
 a:visited {
@@ -53,7 +99,6 @@ h1,
   font-family: var(--header-font);
   font-weight: bold;
   text-align: center;
-  text-transform: uppercase;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -63,6 +108,7 @@ h1 {
 
 .heading-title {
   font-size: 48px;
+  margin: 24px 0;
 }
 
 .standard-text {
