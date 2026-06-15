@@ -20,10 +20,20 @@ html {
   margin: 0;
   padding: 0;
 }
+/*
+.container {
+  height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
 
 section {
-  height: 670px;
-}
+  height: calc(100vh-120px);
+  width: 100%;
+  scroll-snap-type: y mandatory;
+} */
+
 .section-1,
 .section-5 {
   background-color: var(--off-white);
@@ -32,13 +42,6 @@ section {
 .section-7 {
   background-color: var(--main-color);
 }
-
-/* .section-3.problem-1 {
-background-color: ffffff;
-}
-.section-3.problem-2 {
-background-color: var(--accent-color);
-}*/
 
 .section-4,
 .section-6 {
@@ -49,6 +52,7 @@ background-color: var(--accent-color);
   display: flex;
   justify-content: center;
   padding: 35px 0 20px;
+  height: 670px;
 }
 
 .section-1 .hero .tag-line {
@@ -79,6 +83,49 @@ background-color: var(--accent-color);
   padding: 50px;
 }
 
+.section-3 .problems {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+}
+
+.section-3 .problem-1 {
+  background-color: ffffff;
+  padding: 50px 50px 25px;
+}
+
+.section-3 .problem-2 {
+  background-color: var(--accent-red);
+  padding: 50px 50px 25px;
+}
+
+.section-4 .political-abandonment {
+  padding: 150px;
+}
+
+.section-5 .title-background {
+  background-color: var(--accent-red);
+  padding: 10px 15px 15px;
+}
+
+.section-5 .demands-description {
+  display: grid;
+  column-gap: 5%;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  padding: 50px 50px 25px;
+}
+
+.section-5 img {
+  display: block;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.section-6 .tag-line {
+  padding: 250px 150px;
+}
+
 /*items formatting*/
 button {
   background-color: var(--main-color);
@@ -100,8 +147,8 @@ a:visited {
   text-decoration: none;
 }
 h1,
-.heading-title {
-  color: var(--navy);
+.heading-title,
+.tag-line-text {
   font-family: var(--header-font);
   font-weight: bold;
   text-align: center;
@@ -109,12 +156,19 @@ h1,
 }
 
 h1 {
+  color: var(--navy);
   font-size: 78px;
 }
 
 .heading-title {
+  color: var(--navy);
   font-size: 48px;
   margin: 24px 0;
+}
+
+.tag-line-text {
+  color: var(--off-white);
+  font-size: 78px;
 }
 
 .standard-text {
@@ -123,9 +177,16 @@ h1 {
   text-align: center;
 }
 
+.non-standard-text {
+  font-family: var(--text-font);
+  font-size: 32px;
+  text-align: center;
+}
+
 .title {
   font-family: var(--text-font);
   font-size: 64px;
+  text-align: center;
 }
 
 .title-emphasised {
