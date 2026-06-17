@@ -20,19 +20,10 @@ html {
   margin: 0;
   padding: 0;
 }
-/*
-.container {
-  height: 100vh;
-  width: 100%;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
-}
 
-section {
-  height: calc(100vh-120px);
-  width: 100%;
-  scroll-snap-type: y mandatory;
-} */
+html {
+  scroll-behavior: smooth;
+}
 
 .section-1,
 .section-5 {
@@ -51,8 +42,17 @@ section {
 .section-1 .hero {
   display: flex;
   justify-content: center;
-  padding: 60px 0 30px;
-  height: 100vh;
+  align-items: center; /* Centre verticalement les blocs (logo + texte) sur l'écran */
+  gap: 5%; /* Crée un espace horizontal de 5% entre le logo et le texte */
+  height: 100vh; /* Force la section à prendre exactement la hauteur de l'écran */
+  box-sizing: border-box; /* Garantit que les paddings ne font pas dépasser la section */
+  padding: 40px 20px; /* Marge de sécurité interne */
+}
+
+.section-1 .big-logo {
+  max-height: 60vh; /* Empêche le logo de dépasser 60% de la hauteur de l'écran */
+  width: auto; /* Conserve les proportions parfaites de ton image */
+  display: block;
 }
 
 .section-1 .hero .tag-line {
@@ -61,6 +61,23 @@ section {
 
 .section-1 .hero h1 {
   margin-bottom: 0;
+}
+
+.section-1 button {
+  background-color: var(--main-color);
+  border: 0;
+  border-radius: 60px;
+  box-shadow: 5px 5px 5px rgba(111, 69, 93, 0.22);
+  display: block;
+  margin: 0 auto;
+  padding: 30px 60px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.section-1 button:hover {
+  background-color: var(--accent-red);
+  transform: translateY(-2px);
 }
 
 .sticky-header {
@@ -82,6 +99,9 @@ section {
   justify-content: center;
   padding: 50px;
 }
+.section-2 .description-img {
+  max-width: 100%;
+}
 
 .section-3 .problems {
   display: grid;
@@ -90,7 +110,7 @@ section {
 }
 
 .section-3 .problem-1 {
-  background-color: ffffff;
+  background-color: #ffffff;
   padding: 50px 50px 25px;
 }
 
@@ -144,20 +164,6 @@ section {
 
 .section-footer img:hover {
   transform: scale(1.5);
-}
-/*items formatting*/
-button {
-  background-color: var(--main-color);
-  border: 0;
-  border-radius: 60px;
-  box-shadow: 5px 5px 5px rgba(111, 69, 93, 0.22);
-  display: block;
-  margin: 0 auto;
-  padding: 30px 60px;
-}
-
-.big-logo {
-  margin-top: 26px;
 }
 
 /*text formatting*/
@@ -259,27 +265,198 @@ h1 {
   color: var(--accent-red);
 }
 
-/*
-create classes with specific styling and then apply to sections!! 
-also set specific width and height for each section 
-font-family: var(--text-font);
-<weight>: Use a value from 400 to 700
-<uniquifier>: Use a unique and descriptive class name
+@media screen and (min-width: 1025px) and (max-width: 1250px) {
+  .section-1 button {
+    font-size: 24px; /* Réduit la police de 48px à 24px pour cette taille d'écran */
+    padding: 15px 40px; /* Réduit le padding pour dégonfler le bouton */
+    margin-top: 20px; /* Ajoute une marge contrôlée au-dessus */
+    white-space: nowrap; /* 👈 TRÈS IMPORTANT : Empêche le texte du bouton de se couper sur 2 lignes */
+  }
+  .section-2 .description {
+    display: flex;
+    flex-direction: row; /* On garde l'alignement côte à côte */
+    align-items: center; /* Centre verticalement le texte et l'image */
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px;
+  }
 
- .lora-<uniquifier > {
-  font-family: "Lora", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+  .section-2 .description-text {
+    width: 60%; /* Conserve la largeur de 60% */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; /* 👈 Aligne tout le texte proprement à gauche */
+  }
+
+  .section-2 .description-text .standard-text {
+    font-size: 40px;
+  }
+
+  .section-2 .description-img {
+    width: 35%; /* Le conteneur de l'image prend 35% de la largeur */
+    display: flex;
+    justify-content: center;
+  }
+
+  /* C'est cette règle précise sur la balise IMG qui va la forcer à obéir */
+  .section-2 .description-img img {
+    max-width: 100%; /* L'image ne dépassera JAMAIS son conteneur de 35% */
+    height: auto; /* Conserve les proportions parfaites */
+    display: block;
+  }
 }
 
-<weight>: Use a value from 100 to 900
-<uniquifier>: Use a unique and descriptive class name
+@media screen and (max-width: 1024px) {
+  /* Ajustement des textes globaux pour tablette */
+  h1,
+  .important-text,
+  .title-emphasised {
+    font-size: 52px;
+  }
 
-.montserrat-<uniquifier> {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+  .heading-title {
+    font-size: 36px;
+  }
+
+  .title {
+    font-size: 42px;
+  }
+
+  .standard-text {
+    font-size: 28px;
+  }
+
+  .non-standard-text {
+    font-size: 22px;
+  }
+
+  /* Réduction des gros paddings */
+  .section-4 .political-abandonment {
+    padding: 80px 40px;
+  }
+
+  .section-6 .tag-line {
+    padding: 120px 40px;
+  }
+
+  /* Ajustements de la structure */
+  .section-1 .hero {
+    display: flex;
+    flex-direction: column; /* Aligne le logo et le texte verticalement */
+    justify-content: center; /* Centre le contenu verticalement dans l'écran */
+    align-items: center; /* Centre le contenu horizontalement */
+    height: 100vh; /* Force la section à prendre 100% de la hauteur du viewport */
+    box-sizing: border-box; /* Inclut le padding dans le calcul des 100% */
+    padding: 20px; /* Un petit padding de sécurité pour les tablettes en mode portrait */
+  }
+
+  .section-1 .big-logo {
+    max-height: 30vh; /* Le logo prendra au maximum 30% de la hauteur de l'écran */
+    width: auto; /* Garde les proportions du logo */
+    margin-top: 0; /* Supprime l'ancienne marge du mode ordinateur */
+    margin-bottom: 20px; /* Crée un espace propre avec le texte en dessous */
+  }
+
+  .section-2 .description {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+  .section-2 .description-img {
+    margin-top: 30px;
+    max-width: 80%;
+  }
 }
-*/
+
+@media screen and (max-width: 768px) {
+  /* Ajustement des textes globaux pour mobile */
+  h1,
+  .important-text,
+  .title-emphasised {
+    font-size: 36px;
+  }
+
+  .heading-title {
+    font-size: 26px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .standard-text {
+    font-size: 20px;
+  }
+
+  .non-standard-text {
+    font-size: 18px;
+  }
+
+  /* Réduction drastique des paddings */
+  .section-1 button {
+    padding: 20px 40px;
+    font-size: 18px;
+  }
+
+  .section-2 .description-text {
+    margin: 0;
+  }
+
+  .section-3 .problem-1,
+  .section-3 .problem-2,
+  .section-5 .demands-description,
+  .section-7 {
+    padding: 40px 20px;
+  }
+
+  .section-4 .political-abandonment {
+    padding: 60px 20px;
+  }
+
+  .section-6 .tag-line {
+    padding: 80px 20px;
+  }
+
+  /* Passage des Grilles (2 colonnes) en 1 seule colonne */
+  .section-3 .problems,
+  .section-5 .demands-description {
+    grid-template-columns: 1fr;
+  }
+
+  /* Espacement pour les blocs qui se superposent désormais */
+  .section-5 .demand-1 {
+    margin-bottom: 40px;
+  }
+
+  .sticky-header-content {
+    display: flex;
+    flex-direction: row; /* Aligne sur une seule ligne */
+    align-items: center; /* Centre verticalement le logo et le texte */
+    justify-content: map-edge; /* Aligne aux extrémités */
+    justify-content: space-between;
+    padding: 10px 20px; /* Ajoute une marge de sécurité à gauche et à droite */
+  }
+
+  .sticky-header-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .sticky-header-logo-image {
+    height: 35px; /* Limite la hauteur pour que ça reste discret */
+    width: auto;
+  }
+
+  .sticky-header .heading-title {
+    font-size: 14px; /* Plus petit pour être sûr que tout tienne sur une ligne */
+    margin: 0;
+    text-align: right; /* Aligne le texte vers la droite */
+  }
+
+  /* cacher le ticket */
+  .section-2 .description-img {
+    display: none;
+  }
+}
